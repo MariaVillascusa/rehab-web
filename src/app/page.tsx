@@ -84,7 +84,7 @@ export default function Home() {
 
   return (
     <div className="site-shell">
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#03060a]/85 backdrop-blur-md">
+      <header className="sticky top-0 z-40 border-b border-slate-300/80 bg-[#f5f7fb]/92 shadow-[0_8px_30px_rgba(5,18,35,0.08)] backdrop-blur-md">
         <nav
           className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 lg:px-10"
           aria-label="Principal"
@@ -98,9 +98,9 @@ export default function Home() {
               priority
               className="logo-image"
             />
-            <span className="font-display text-2xl tracking-wide text-white">Rehab Strength</span>
+            <span className="font-display text-2xl tracking-wide text-slate-900">Rehab Strength</span>
           </a>
-          <div className="hidden items-center gap-8 text-sm font-semibold text-slate-200 md:flex">
+          <div className="hidden items-center gap-8 text-sm font-semibold text-slate-700 md:flex">
             <a className="nav-link" href="#servicios">
               Servicios
             </a>
@@ -120,7 +120,7 @@ export default function Home() {
         </nav>
       </header>
 
-      <main id="inicio">
+      <main id="inicio" className="page-flow">
         <section className="hero-section">
           <div className="electric-lines" aria-hidden="true" />
           <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-28">
@@ -150,15 +150,15 @@ export default function Home() {
               <h2 className="font-display text-3xl text-white">Resultados medibles</h2>
               <div className="mt-8 grid gap-6">
                 <div>
-                  <p className="text-4xl font-bold text-[#00a6ff]">+1.200</p>
+                  <p className="text-3xl font-bold text-[#00a6ff]">+1.200</p>
                   <p className="text-slate-300">sesiones completadas con seguimiento clinico</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-bold text-[#00a6ff]">92%</p>
+                  <p className="text-3xl font-bold text-[#00a6ff]">92%</p>
                   <p className="text-slate-300">de pacientes retoman su actividad con seguridad</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-bold text-[#00a6ff]">48h</p>
+                  <p className="text-3xl font-bold text-[#00a6ff]">48h</p>
                   <p className="text-slate-300">para iniciar tu plan personalizado de recuperacion</p>
                 </div>
               </div>

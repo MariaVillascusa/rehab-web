@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #020409;
-  --bg-soft: #070d16;
-  --card: #0c1624;
-  --line: #1d3047;
-  --text: #d6e4f3;
-  --text-soft: #8fa3bc;
+  --bg: #07090d;
+  --bg-soft: #0f141c;
+  --card: #101824;
+  --line: #283549;
+  --text: #dce6f2;
+  --text-soft: #95a5b9;
   --electric: #00a6ff;
   --electric-soft: #8ed8ff;
 }
@@ -22,8 +22,10 @@
 
 html,
 body {
-  background: radial-gradient(circle at 80% 0%, rgba(0, 166, 255, 0.2), transparent 40%),
-    radial-gradient(circle at 20% 20%, rgba(8, 29, 60, 0.8), transparent 48%), var(--bg);
+  background:
+    radial-gradient(circle at 80% -10%, rgba(255, 255, 255, 0.05), transparent 34%),
+    radial-gradient(circle at 18% 10%, rgba(120, 130, 145, 0.08), transparent 42%),
+    linear-gradient(180deg, #0b0d10 0%, #07090d 36%, #040508 100%);
   color: var(--text);
   font-family: var(--font-body), sans-serif;
   scroll-behavior: smooth;
@@ -34,26 +36,95 @@ body {
   overflow: clip;
 }
 
+.page-flow {
+  position: relative;
+  background: linear-gradient(180deg, #07090d 0%, #06080c 42%, #05070a 100%);
+}
+
+.page-flow > section {
+  position: relative;
+}
+
+.page-flow > section + section::before {
+  content: "";
+  position: absolute;
+  top: -110px;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 9, 13, 0) 0%,
+    rgba(7, 9, 13, 0.74) 58%,
+    rgba(7, 9, 13, 1) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-flow > section > * {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-section {
   position: relative;
   isolation: isolate;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 21, 27, 0.84) 0%,
+    rgba(10, 12, 18, 0.97) 58%,
+    rgba(7, 9, 13, 1) 100%
+  );
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 240px;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 10, 14, 0) 0%,
+    rgba(7, 9, 13, 0.76) 52%,
+    rgba(7, 9, 13, 1) 100%
+  );
+  filter: blur(10px);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .electric-lines {
   position: absolute;
   inset: -20% 0 auto;
-  height: 420px;
+  margin-top: 140px;
+  width: 100%;
+  height: 700px;
+  position: absolute !important;
   background:
-    linear-gradient(110deg, transparent 0%, rgba(0, 166, 255, 0.35) 35%, transparent 60%),
+    linear-gradient(110deg, transparent 0%, rgba(0, 166, 255, 0.06) 34%, transparent 64%),
     repeating-linear-gradient(
       -55deg,
       transparent,
-      transparent 22px,
-      rgba(0, 166, 255, 0.11) 23px,
-      rgba(0, 166, 255, 0.11) 24px
+      transparent 24px,
+      rgba(170, 178, 190, 0.07) 25px,
+      rgba(170, 178, 190, 0.07) 26px
     );
-  filter: blur(1px);
-  opacity: 0.8;
+  filter: blur(1px) saturate(0.4);
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.92) 72%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  opacity: 0.26;
   pointer-events: none;
   animation: pulse-lines 6s ease-in-out infinite;
   z-index: -1;
@@ -72,6 +143,7 @@ body {
 
 .hero-title {
   font-family: var(--font-display), sans-serif;
+  font-style: italic;
   font-size: clamp(3rem, 8vw, 5.2rem);
   text-transform: uppercase;
   line-height: 0.9;
@@ -95,7 +167,8 @@ body {
   font-family: var(--font-display), sans-serif;
   text-transform: uppercase;
   line-height: 1;
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(1.35rem, 3.5vw, 2.2rem);
+  letter-spacing: 0.01em;
   color: #f3f8ff;
 }
 
@@ -149,7 +222,7 @@ body {
 
 .nav-link:hover,
 .nav-link:focus-visible {
-  color: var(--electric-soft);
+  color: var(--electric);
 }
 
 .stats-panel,
@@ -159,7 +232,7 @@ body {
 .pillar-item {
   border-radius: 1rem;
   border: 1px solid rgba(143, 163, 188, 0.22);
-  background: linear-gradient(160deg, rgba(10, 18, 30, 0.92), rgba(6, 11, 19, 0.95));
+  background: linear-gradient(160deg, rgba(12, 14, 20, 0.95), rgba(7, 9, 14, 0.98));
 }
 
 .stats-panel {
@@ -279,14 +352,19 @@ body {
 @keyframes pulse-lines {
   0%,
   100% {
-    opacity: 0.55;
+    opacity: 0.5;
   }
   50% {
-    opacity: 0.9;
+    opacity: 1;
   }
 }
 
 @media (max-width: 768px) {
+  .page-flow > section + section::before {
+    top: -85px;
+    height: 105px;
+  }
+
   .section-wrap {
     padding-top: 3.2rem;
   }
