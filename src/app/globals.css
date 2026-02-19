@@ -1,26 +1,293 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #020409;
+  --bg-soft: #070d16;
+  --card: #0c1624;
+  --line: #1d3047;
+  --text: #d6e4f3;
+  --text-soft: #8fa3bc;
+  --electric: #00a6ff;
+  --electric-soft: #8ed8ff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+* {
+  border-color: var(--line);
+}
+
+html,
+body {
+  background: radial-gradient(circle at 80% 0%, rgba(0, 166, 255, 0.2), transparent 40%),
+    radial-gradient(circle at 20% 20%, rgba(8, 29, 60, 0.8), transparent 48%), var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), sans-serif;
+  scroll-behavior: smooth;
+}
+
+.site-shell {
+  min-height: 100vh;
+  overflow: clip;
+}
+
+.hero-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.electric-lines {
+  position: absolute;
+  inset: -20% 0 auto;
+  height: 420px;
+  background:
+    linear-gradient(110deg, transparent 0%, rgba(0, 166, 255, 0.35) 35%, transparent 60%),
+    repeating-linear-gradient(
+      -55deg,
+      transparent,
+      transparent 22px,
+      rgba(0, 166, 255, 0.11) 23px,
+      rgba(0, 166, 255, 0.11) 24px
+    );
+  filter: blur(1px);
+  opacity: 0.8;
+  pointer-events: none;
+  animation: pulse-lines 6s ease-in-out infinite;
+  z-index: -1;
+}
+
+.logo-image {
+  width: 2.75rem;
+  height: 2.75rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0 14px rgba(0, 166, 255, 0.4));
+}
+
+.font-display {
+  font-family: var(--font-display), sans-serif;
+}
+
+.hero-title {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(3rem, 8vw, 5.2rem);
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: #f8fbff;
+  text-wrap: balance;
+}
+
+.section-wrap {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 76rem;
+  padding: 4rem 1.5rem 0;
+}
+
+.section-heading {
+  max-width: 52rem;
+}
+
+.section-heading h2 {
+  font-family: var(--font-display), sans-serif;
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: #f3f8ff;
+}
+
+.eyebrow {
+  margin-bottom: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--electric-soft);
+}
+
+.btn-primary,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: all 220ms ease;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.3rem;
+}
+
+.btn-primary {
+  background: linear-gradient(130deg, #00a6ff, #0c7fd6 60%, #0763a9);
+  color: #f2f8ff;
+  box-shadow: 0 0 0 1px rgba(142, 216, 255, 0.36), 0 0 26px rgba(0, 166, 255, 0.44);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 1px rgba(142, 216, 255, 0.6), 0 0 30px rgba(0, 166, 255, 0.64);
+}
+
+.btn-ghost {
+  border: 1px solid rgba(143, 163, 188, 0.45);
+  color: #e0ecf8;
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus-visible {
+  border-color: rgba(0, 166, 255, 0.8);
+  box-shadow: inset 0 0 0 1px rgba(0, 166, 255, 0.5);
+}
+
+.nav-link {
+  transition: color 180ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--electric-soft);
+}
+
+.stats-panel,
+.info-card,
+.team-card,
+.testimonial-card,
+.pillar-item {
+  border-radius: 1rem;
+  border: 1px solid rgba(143, 163, 188, 0.22);
+  background: linear-gradient(160deg, rgba(10, 18, 30, 0.92), rgba(6, 11, 19, 0.95));
+}
+
+.stats-panel {
+  padding: 1.8rem;
+  box-shadow: inset 0 0 0 1px rgba(0, 166, 255, 0.12), 0 0 40px rgba(0, 166, 255, 0.14);
+}
+
+.info-card,
+.team-card,
+.testimonial-card {
+  padding: 1.4rem;
+  transition: border-color 220ms ease, transform 220ms ease;
+}
+
+.info-card:hover,
+.team-card:hover,
+.testimonial-card:hover {
+  border-color: rgba(0, 166, 255, 0.65);
+  transform: translateY(-3px);
+}
+
+.info-card h3,
+.team-card h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f1f7ff;
+}
+
+.info-card p,
+.team-card p,
+.testimonial-card p {
+  margin-top: 0.7rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.icon-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  color: var(--electric);
+  background: rgba(0, 166, 255, 0.12);
+}
+
+.icon-badge svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.pillar-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1rem 1.2rem;
+}
+
+.pillar-item p {
+  color: var(--text);
+}
+
+.bolt-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  margin-top: 0.45rem;
+  border-radius: 999px;
+  background: var(--electric);
+  box-shadow: 0 0 16px var(--electric);
+  flex-shrink: 0;
+}
+
+.avatar-ring {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #dff3ff;
+  background: linear-gradient(135deg, #008bd8, #02456f);
+  box-shadow: 0 0 0 3px rgba(0, 166, 255, 0.2);
+}
+
+.role {
+  color: var(--electric-soft) !important;
+  font-weight: 600;
+  margin-top: 0.35rem !important;
+}
+
+.testimonial-card footer {
+  margin-top: 1rem;
+  font-weight: 700;
+  color: #f3f8ff;
+}
+
+.input-control {
+  border-radius: 0.8rem;
+  border: 1px solid rgba(143, 163, 188, 0.35);
+  background: rgba(6, 11, 18, 0.9);
+  color: #edf6ff;
+  padding: 0.68rem 0.9rem;
+  width: 100%;
+}
+
+.input-control::placeholder {
+  color: #70849d;
+}
+
+.input-control:focus-visible {
+  outline: 2px solid transparent;
+  border-color: rgba(0, 166, 255, 0.8);
+  box-shadow: 0 0 0 3px rgba(0, 166, 255, 0.22);
+}
+
+@keyframes pulse-lines {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.9;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (max-width: 768px) {
+  .section-wrap {
+    padding-top: 3.2rem;
+  }
 }
