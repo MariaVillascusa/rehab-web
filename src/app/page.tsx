@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { BookingForm } from "@/components/booking-form";
+import { Logo } from "@/components/logo";
 
 const services = [
   {
@@ -86,18 +86,11 @@ export default function Home() {
     <div className="site-shell">
       <header className="sticky top-0 z-40 border-b border-slate-300/80 bg-[#f5f7fb]/92 shadow-[0_8px_30px_rgba(5,18,35,0.08)] backdrop-blur-md">
         <nav
-          className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 lg:px-10"
+          className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-3 lg:px-10"
           aria-label="Principal"
         >
           <a href="#inicio" className="group inline-flex items-center gap-3">
-            <Image
-              src="/logo.png"
-              alt="Logo Rehab Strength"
-              width={44}
-              height={44}
-              priority
-              className="logo-image"
-            />
+            <Logo className="logo-image" priority />
             <span className="font-display text-2xl tracking-wide text-slate-900">Rehab Strength</span>
           </a>
           <div className="hidden items-center gap-8 text-sm font-semibold text-slate-700 md:flex">
