@@ -1,22 +1,61 @@
 import type { Metadata } from "next";
-import { BookingForm } from "@/components/booking-form";
 import { Logo } from "@/components/logo";
+
+const WHATSAPP_PHONES = {
+  physio: "34600123456",
+  training: "34600123457",
+} as const;
+
+function buildWhatsAppLink(phone: string, message: string) {
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+}
+
+function WhatsAppIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-4 w-4 shrink-0"
+      fill="currentColor"
+    >
+      <path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.62 2 2.2 6.41 2.2 11.84c0 1.74.45 3.44 1.31 4.95L2 22l5.36-1.4a9.86 9.86 0 0 0 4.68 1.19h.01c5.42 0 9.84-4.41 9.84-9.84 0-2.63-1.02-5.11-2.84-7.04Zm-7.01 15.2h-.01a8.18 8.18 0 0 1-4.17-1.14l-.3-.18-3.18.83.85-3.1-.2-.32a8.14 8.14 0 0 1-1.25-4.35c0-4.51 3.67-8.18 8.19-8.18 2.18 0 4.24.84 5.78 2.4a8.11 8.11 0 0 1 2.39 5.79c0 4.51-3.68 8.19-8.1 8.19Zm4.49-6.13c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1-.37-1.91-1.17-.7-.62-1.18-1.39-1.32-1.63-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.68 2.57 4.08 3.6.57.25 1.02.4 1.37.52.57.18 1.09.16 1.5.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28Z" />
+    </svg>
+  );
+}
 
 const services = [
   {
+    key: "physio",
     title: "Fisioterapia Avanzada",
     description:
       "Tratamiento personalizado para dolor, lesiones y recuperacion funcional con enfoque clinico y seguimiento real.",
+    ctaLabel: "Reserva",
+    whatsappHref: buildWhatsAppLink(
+      WHATSAPP_PHONES.physio,
+      "Hola, quiero reservar una cita de fisioterapia en Rehab Strength.",
+    ),
   },
   {
+    key: "training",
     title: "Entrenamiento Personalizado",
     description:
       "Programas de fuerza y movilidad adaptados a tu fase de recuperacion para volver a rendir con seguridad.",
+    ctaLabel: "Reserva",
+    whatsappHref: buildWhatsAppLink(
+      WHATSAPP_PHONES.training,
+      "Hola, quiero reservar una cita de entrenamiento personalizado en Rehab Strength.",
+    ),
   },
   {
+    key: "assessment",
     title: "Valoracion Integral",
     description:
       "Analisis biomecanico, historial y objetivos para crear un plan claro, medible y orientado a resultados.",
+    ctaLabel: "Reserva",
+    whatsappHref: buildWhatsAppLink(
+      WHATSAPP_PHONES.physio,
+      "Hola, quiero reservar una valoracion integral inicial en Rehab Strength.",
+    ),
   },
 ];
 
@@ -108,7 +147,7 @@ export default function Home() {
             </a>
           </div>
           <a href="#reserva" className="btn-primary hidden md:inline-flex">
-            Reserva tu sesion
+            Solicita cita
           </a>
         </nav>
       </header>
@@ -131,7 +170,7 @@ export default function Home() {
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <a href="#reserva" className="btn-primary">
-                  Reserva tu sesion
+                  Solicita cita
                 </a>
                 <a href="#servicios" className="btn-ghost">
                   Ver servicios
@@ -175,6 +214,15 @@ export default function Home() {
                 </span>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
+                <a
+                  href={service.whatsappHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-ghost mt-5 w-full gap-2"
+                >
+                  {service.ctaLabel}
+                  <WhatsAppIcon />
+                </a>
               </article>
             ))}
           </div>
@@ -234,11 +282,49 @@ export default function Home() {
 
         <section id="reserva" className="section-wrap pb-20">
           <div className="section-heading">
-            <p className="eyebrow">Reserva</p>
-            <h2>Solicita tu cita y empieza tu recuperacion con un plan hecho para ti.</h2>
+            <p className="eyebrow">Reserva por WhatsApp</p>
+            <h2>Elige tu servicio y reserva de forma directa.</h2>
           </div>
-          <div className="mt-10 rounded-2xl border border-white/10 bg-[#07101b]/75 p-6 shadow-[0_0_60px_rgba(0,166,255,0.12)] md:p-10">
-            <BookingForm />
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            <article className="rounded-2xl border border-white/10 bg-[#07101b]/75 p-6 shadow-[0_0_60px_rgba(0,166,255,0.12)] md:p-8">
+              <p className="eyebrow">Fisioterapia</p>
+              <h3 className="font-display text-3xl text-white">Reserva cita de fisioterapia</h3>
+              <p className="mt-4 text-slate-300">
+                Escríbenos para dolor, lesion, recuperacion funcional o valoracion inicial.
+              </p>
+              <a
+                href={buildWhatsAppLink(
+                  WHATSAPP_PHONES.physio,
+                  "Hola, quiero reservar una cita de fisioterapia en Rehab Strength.",
+                )}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary mt-6 w-full gap-2 md:w-fit"
+              >
+                Reserva
+                <WhatsAppIcon />
+              </a>
+            </article>
+
+            <article className="rounded-2xl border border-white/10 bg-[#07101b]/75 p-6 shadow-[0_0_60px_rgba(0,166,255,0.12)] md:p-8">
+              <p className="eyebrow">Entrenamiento</p>
+              <h3 className="font-display text-3xl text-white">Reserva entrenamiento personalizado</h3>
+              <p className="mt-4 text-slate-300">
+                Contacta por WhatsApp para programas de fuerza, movilidad y readaptacion.
+              </p>
+              <a
+                href={buildWhatsAppLink(
+                  WHATSAPP_PHONES.training,
+                  "Hola, quiero reservar una cita de entrenamiento personalizado en Rehab Strength.",
+                )}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-primary mt-6 w-full gap-2 md:w-fit"
+              >
+                Reserva
+                <WhatsAppIcon />
+              </a>
+            </article>
           </div>
         </section>
       </main>
