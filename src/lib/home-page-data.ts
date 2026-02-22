@@ -28,22 +28,11 @@ export const services = [
   },
   {
     key: "training",
-    title: "Entrenamiento Personalizado",
+    title: "Entrenamiento Físico",
     description:
       "Programas de fuerza y movilidad adaptados a tu fase de recuperacion para volver a rendir con seguridad.",
     ctaLabel: "Reserva",
     whatsappHref: trainingWhatsAppHref,
-  },
-  {
-    key: "assessment",
-    title: "Valoracion Integral",
-    description:
-      "Analisis biomecanico, historial y objetivos para crear un plan claro, medible y orientado a resultados.",
-    ctaLabel: "Reserva",
-    whatsappHref: buildWhatsAppLink(
-      WHATSAPP_PHONES.physio,
-      "Hola, quiero reservar una valoracion integral inicial en Rehab Strength.",
-    ),
   },
 ] as const;
 
@@ -64,11 +53,6 @@ export const team = [
     name: "Carlos Mena",
     role: "Preparador Fisico",
     bio: "Especialista en fuerza aplicada a readaptacion y retorno al deporte sin recaidas.",
-  },
-  {
-    name: "Irene Ortega",
-    role: "Coordinacion Clinica",
-    bio: "Disena protocolos de seguimiento para mejorar adherencia y resultados de cada paciente.",
   },
 ] as const;
 

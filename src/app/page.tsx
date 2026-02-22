@@ -101,7 +101,7 @@ export default function Home() {
             <p className="eyebrow">Servicios</p>
             <h2>Dos disciplinas, un solo objetivo: recuperar tu mejor version.</h2>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
             {services.map((service) => (
               <article key={service.title} className="info-card">
                 <span className="icon-badge" aria-hidden="true">
@@ -140,7 +140,7 @@ export default function Home() {
             <p className="eyebrow">Equipo profesional</p>
             <h2>Expertos en recuperacion funcional, readaptacion y fuerza terapeutica.</h2>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
             {team.map((member) => (
               <article key={member.name} className="team-card">
                 <div className="avatar-ring" aria-hidden="true">
