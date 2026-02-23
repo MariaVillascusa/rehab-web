@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Logo } from "@/components/logo";
+import Link from "next/link";
 import { WhatsAppBookingSection } from "@/components/whatsapp-booking-section";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import {
@@ -20,36 +20,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="site-shell">
-      <header className="sticky top-0 z-40 border-b border-slate-300/80 bg-[#f5f7fb]/92 shadow-[0_8px_30px_rgba(5,18,35,0.08)] backdrop-blur-md">
-        <nav
-          className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-3 lg:px-10"
-          aria-label="Principal"
-        >
-          <a href="#inicio" className="group inline-flex items-center gap-3">
-            <Logo className="logo-image" priority />
-            <span className="font-display text-2xl tracking-wide text-slate-900">Rehab Strength</span>
-          </a>
-          <div className="hidden items-center gap-8 text-sm font-semibold text-slate-700 md:flex">
-            <a className="nav-link" href="#servicios">
-              Servicios
-            </a>
-            <a className="nav-link" href="#metodologia">
-              Metodologia
-            </a>
-            <a className="nav-link" href="#equipo">
-              Equipo
-            </a>
-            <a className="nav-link" href="#reserva">
-              Reservas
-            </a>
-          </div>
-          <a href="#reserva" className="btn-primary hidden md:inline-flex">
-            Solicita cita
-          </a>
-        </nav>
-      </header>
-
+    <>
       <main id="inicio" className="page-flow">
         <section className="hero-section">
           <div className="electric-lines" aria-hidden="true" />
@@ -70,9 +41,9 @@ export default function Home() {
                 <a href="#reserva" className="btn-primary">
                   Solicita cita
                 </a>
-                <a href="#servicios" className="btn-ghost">
+                <Link href="/servicios" className="btn-ghost">
                   Ver servicios
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -117,6 +88,17 @@ export default function Home() {
                 </WhatsAppButton>
               </article>
             ))}
+          </div>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <Link href="/servicios" className="btn-ghost">
+              Ver detalle de servicios
+            </Link>
+            <Link href="/tarifas" className="btn-ghost">
+              Ver tarifas
+            </Link>
+            <Link href="/horarios-entrenamientos" className="btn-ghost">
+              Ver horarios
+            </Link>
           </div>
         </section>
 
@@ -178,24 +160,10 @@ export default function Home() {
         />
       </main>
 
-      <footer className="border-t border-white/10 bg-[#020409]">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-10 text-sm text-slate-400 lg:flex-row lg:items-center lg:justify-between lg:px-10">
-          <p>© {new Date().getFullYear()} Rehab Strength. Recuperacion y rendimiento con criterio clinico.</p>
-          <div className="flex gap-6">
-            <a href="#" className="nav-link">
-              Politica de privacidad
-            </a>
-            <a href="#" className="nav-link">
-              Contacto
-            </a>
-          </div>
-        </div>
-      </footer>
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
-    </div>
+    </>
   );
 }
