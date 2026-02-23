@@ -7,7 +7,7 @@ import { trainingWhatsAppHref } from "@/lib/home-page-data";
 export const metadata: Metadata = {
   title: "Horarios de Entrenamientos",
   description:
-    "Consulta los horarios disponibles para entrenamientos en Rehab Strength y confirma tu plaza por WhatsApp.",
+    "Consulta los horarios disponibles para entrenamientos en Rehab Strength (Molina de Segura, Murcia) y confirma tu plaza por WhatsApp.",
 };
 
 export default function HorariosEntrenamientosPage() {
@@ -16,11 +16,11 @@ export default function HorariosEntrenamientosPage() {
         <section className="hero-section">
           <div className="electric-lines" aria-hidden="true" />
           <div className="mx-auto w-full max-w-6xl px-6 py-20 lg:px-10 lg:py-24">
-            <p className="eyebrow">Horarios</p>
-            <h1 className="hero-title">Horarios de entrenamientos</h1>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-300">
-              Consulta los tramos disponibles y solicita tu plaza por WhatsApp para confirmar
-              disponibilidad y nivel del grupo.
+          <p className="eyebrow">Horarios</p>
+          <h1 className="hero-title">Horarios de entrenamientos</h1>
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-300">
+              Consulta los horarios disponibles y solicita tu plaza por WhatsApp. Te confirmamos
+              disponibilidad y el grupo más adecuado para tu nivel.
             </p>
           </div>
         </section>
@@ -28,7 +28,7 @@ export default function HorariosEntrenamientosPage() {
         <section className="section-wrap pb-20">
           <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#07101b]/75 shadow-[0_0_60px_rgba(0,166,255,0.12)]">
             <div className="grid grid-cols-[1fr] border-b border-white/10 bg-white/3 px-5 py-4 md:grid-cols-[180px_1fr]">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8ed8ff]">Dia</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8ed8ff]">Día</p>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8ed8ff]">Turnos</p>
             </div>
 

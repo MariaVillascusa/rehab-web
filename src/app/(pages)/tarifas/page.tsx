@@ -6,7 +6,7 @@ import { pricingBlocks } from "@/lib/extra-pages-data";
 export const metadata: Metadata = {
   title: "Tarifas",
   description:
-    "Consulta tarifas de fisioterapia y entrenamiento fisico en Rehab Strength. Confirmacion final por WhatsApp.",
+    "Consulta tarifas de fisioterapia y entrenamiento físico en Rehab Strength (Molina de Segura, Murcia). Confirmación final por WhatsApp.",
 };
 
 export default function TarifasPage() {
@@ -15,12 +15,12 @@ export default function TarifasPage() {
         <section className="hero-section">
           <div className="electric-lines" aria-hidden="true" />
           <div className="mx-auto w-full max-w-6xl px-6 py-20 lg:px-10 lg:py-24">
-            <p className="eyebrow">Tarifas</p>
-            <h1 className="hero-title">Opciones de sesiones y bonos</h1>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-300">
-              Página preparada para mostrar precios por servicio. Puedes actualizar los importes
-              cuando el cliente los confirme.
-            </p>
+          <p className="eyebrow">Tarifas</p>
+          <h1 className="hero-title">Opciones de sesiones y bonos</h1>
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-300">
+            Consulta las opciones de sesiones y bonos de fisioterapia y entrenamiento. Si tienes
+            dudas, te orientamos por WhatsApp según tu objetivo y la frecuencia recomendada.
+          </p>
           </div>
         </section>
 
@@ -45,7 +45,7 @@ export default function TarifasPage() {
                   ))}
                 </div>
                 <WhatsAppButton href={block.whatsappHref} className="btn-primary mt-6 w-full gap-2 md:w-fit">
-                  Solicita informacion
+                  Solicita información
                 </WhatsAppButton>
               </article>
             ))}
@@ -53,8 +53,8 @@ export default function TarifasPage() {
 
           <div className="mt-8 rounded-2xl border border-[#00a6ff]/20 bg-[#07101b]/75 p-5 text-sm text-slate-300">
             <p>
-              Los importes pueden variar segun frecuencia, duracion de sesion y objetivos de
-              recuperacion/readaptacion.
+              Los importes pueden variar según frecuencia, duración de sesión y objetivos de
+              recuperación o readaptación.
             </p>
           </div>
 

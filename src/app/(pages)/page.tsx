@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { WhatsAppBookingSection } from "@/components/whatsapp-booking-section";
 import { WhatsAppButton } from "@/components/whatsapp-button";
@@ -15,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Centro de Rehabilitacion y Rendimiento",
   description:
-    "Rehab Strength: fisioterapia y entrenamiento personalizado para recuperarte con seguridad y volver mas fuerte.",
+    "Rehab Strength en Molina de Segura (Murcia): fisioterapia y entrenamiento personalizado para recuperarte con seguridad y volver más fuerte.",
 };
 
 export default function Home() {
@@ -24,22 +25,23 @@ export default function Home() {
       <main id="inicio" className="page-flow">
         <section className="hero-section">
           <div className="electric-lines" aria-hidden="true" />
-          <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-28">
+          <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[1fr_1fr] lg:px-10 lg:py-24">
             <div>
               <p className="mb-6 inline-flex items-center rounded-full border border-[#00a6ff]/45 bg-[#00a6ff]/10 px-4 py-1 text-sm font-semibold text-[#8ed8ff]">
-                Recuperacion inteligente. Fuerza controlada.
+                Centro de fisioterapia y rendimiento en Molina de Segura (Murcia)
               </p>
               <h1 className="hero-title">
-                Vuelve a moverte <span className="text-[#00a6ff]">sin dolor</span> y con mas
-                potencia.
+                <span className="text-[clamp(2.8rem,6.8vw,4.6rem)] leading-[0.95]">
+                  Tratamos el dolor. <span className="text-[#00a6ff]">Construimos fuerza.</span>
+                </span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
-                En Rehab Strength unimos fisioterapia y entrenamiento para acelerar tu
-                recuperacion, prevenir recaidas y devolverte confianza en cada movimiento.
+                En Rehab Strength combinamos fisioterapia y entrenamiento para ayudarte a recuperarte,
+                volver a tu actividad y reducir el riesgo de recaídas.
               </p>
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap gap-4">
                 <a href="#reserva" className="btn-primary">
-                  Solicita cita
+                  Reserva tu valoración / cita
                 </a>
                 <Link href="/servicios" className="btn-ghost">
                   Ver servicios
@@ -47,34 +49,39 @@ export default function Home() {
               </div>
             </div>
 
-            <aside className="stats-panel" aria-label="Resultados">
-              <h2 className="font-display text-3xl text-white">Resultados medibles</h2>
-              <div className="mt-8 grid gap-6">
-                <div>
-                  <p className="text-3xl font-bold text-[#00a6ff]">+1.200</p>
-                  <p className="text-slate-300">sesiones completadas con seguimiento clinico</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-[#00a6ff]">92%</p>
-                  <p className="text-slate-300">de pacientes retoman su actividad con seguridad</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-[#00a6ff]">48h</p>
-                  <p className="text-slate-300">para iniciar tu plan personalizado de recuperacion</p>
+            <div>
+              <div className="stats-panel overflow-hidden p-0">
+                <div className="relative h-[320px] w-full md:h-[420px]">
+                  <Image
+                    src="/images/green.avif"
+                    alt="Material de entrenamiento en el centro Rehab Strength"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#03060c]/75 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/10 bg-[#050a12]/80 p-4 backdrop-blur-sm">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8ed8ff]">
+                      Centro especializado
+                    </p>
+                    <p className="mt-2 text-sm text-slate-200">
+                      Recuperación y fuerza en un mismo proceso, con seguimiento y progresión.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </aside>
+            </div>
           </div>
         </section>
 
         <section id="servicios" className="section-wrap">
           <div className="section-heading">
-            <p className="eyebrow">Servicios</p>
-            <h2>Dos disciplinas, un solo objetivo: recuperar tu mejor version.</h2>
+            <p className="eyebrow">Qué ofrecemos</p>
+            <h2>Dos servicios que trabajan juntos para acelerar tu recuperación.</h2>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {services.map((service) => (
-              <article key={service.title} className="info-card">
+              <article key={service.title} className="info-card flex flex-col">
                 <span className="icon-badge" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
                     <path d="M5 12h14M12 5v14" />
@@ -83,9 +90,22 @@ export default function Home() {
                 </span>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-                <WhatsAppButton href={service.whatsappHref} className="btn-ghost mt-5 w-full gap-2">
-                  {service.ctaLabel}
-                </WhatsAppButton>
+                <ul className="mt-4 grid gap-2 text-sm text-slate-300">
+                  {service.bullets.map((bullet) => (
+                    <li key={bullet} className="flex items-start gap-2">
+                      <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#00a6ff]" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <Link href={service.pageHref} className="btn-ghost">
+                    Ver {service.title.toLowerCase()}
+                  </Link>
+                  <WhatsAppButton href={service.whatsappHref} className="btn-ghost gap-2">
+                    {service.ctaLabel}
+                  </WhatsAppButton>
+                </div>
               </article>
             ))}
           </div>
@@ -104,8 +124,8 @@ export default function Home() {
 
         <section id="metodologia" className="section-wrap">
           <div className="section-heading">
-            <p className="eyebrow">Metodologia</p>
-            <h2>Proceso clinico claro, progresion segura y foco en resultados duraderos.</h2>
+            <p className="eyebrow">Diferencial del centro</p>
+            <h2>No somos un gimnasio generalista ni un centro de “solo camilla”.</h2>
           </div>
           <div className="mt-10 grid gap-4">
             {pillars.map((item) => (
@@ -117,10 +137,50 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="section-wrap">
+          <div className="section-heading">
+            <p className="eyebrow">Sobre nosotros</p>
+            <h2>Experiencia clínica y entrenamiento para acompañarte en todo el proceso.</h2>
+          </div>
+          <div className="mt-10 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
+            <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#07101b]/75">
+              <div className="relative h-80 w-full lg:h-full lg:min-h-[420px]">
+                <Image src="/images/grey.avif" alt="Rack y zona de trabajo del centro en Molina de Segura" fill className="object-cover" />
+              </div>
+            </div>
+            <div className="info-card">
+              <h3 className="font-display text-3xl text-white">Salud y rendimiento en el mismo plan</h3>
+              <p className="mt-4 text-slate-300">
+                Trabajamos con personas que quieren dejar atrás el dolor, recuperar su actividad y
+                seguir entrenando con una base sólida y segura.
+              </p>
+              <div className="mt-6 grid gap-3">
+                <div className="pillar-item px-4 py-3">
+                  <p>Formación y actualización continua del equipo.</p>
+                </div>
+                <div className="pillar-item px-4 py-3">
+                  <p>Comunicación entre fisioterapia y entrenamiento para cada caso.</p>
+                </div>
+                <div className="pillar-item px-4 py-3">
+                  <p>Seguimiento continuo y objetivos claros para que sepas cómo avanzas.</p>
+                </div>
+              </div>
+              <div className="mt-6 flex flex-wrap gap-4">
+                <Link href="/servicios/fisioterapia" className="btn-ghost">
+                  Fisioterapia
+                </Link>
+                <Link href="/servicios/entrenamiento" className="btn-ghost">
+                  Entrenamiento
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="equipo" className="section-wrap">
           <div className="section-heading">
             <p className="eyebrow">Equipo profesional</p>
-            <h2>Expertos en recuperacion funcional, readaptacion y fuerza terapeutica.</h2>
+            <h2>Expertos en recuperación funcional, readaptación y fuerza terapéutica.</h2>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {team.map((member) => (
@@ -142,7 +202,7 @@ export default function Home() {
         <section className="section-wrap">
           <div className="section-heading">
             <p className="eyebrow">Testimonios</p>
-            <h2>Pacientes que recuperaron movilidad, confianza y rendimiento.</h2>
+            <h2>Personas que volvieron a moverse, entrenar y confiar en su cuerpo.</h2>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {testimonials.map((item) => (

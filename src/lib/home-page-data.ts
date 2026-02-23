@@ -7,6 +7,16 @@ const WHATSAPP_PHONES = {
   training: "34600123457",
 } as const;
 
+export const contactInfo = {
+  email: "info@rehab-strength.com",
+  instagramLabel: "@rehabstrength",
+  instagramHref: "https://instagram.com/rehabstrength",
+  physioPhoneDisplay: "+34 600 123 456",
+  trainingPhoneDisplay: "+34 600 123 457",
+  city: "Molina de Segura",
+  region: "Murcia",
+} as const;
+
 export const physioWhatsAppHref = buildWhatsAppLink(
   WHATSAPP_PHONES.physio,
   "Hola, quiero reservar una cita de fisioterapia en Rehab Strength.",
@@ -20,56 +30,70 @@ export const trainingWhatsAppHref = buildWhatsAppLink(
 export const services = [
   {
     key: "physio",
-    title: "Fisioterapia Avanzada",
+    title: "Fisioterapia",
     description:
-      "Tratamiento personalizado para dolor, lesiones y recuperacion funcional con enfoque clinico y seguimiento real.",
+      "Tratamiento del dolor y de lesiones con un plan claro para recuperar movilidad, función y confianza.",
+    bullets: [
+      "Dolor y lesiones deportivas",
+      "Terapia manual y ejercicio terapéutico",
+      "Electropunción, ecografía y diatermia",
+      "Readaptación y retorno seguro",
+    ],
     ctaLabel: "Reserva",
+    pageHref: "/servicios/fisioterapia",
     whatsappHref: physioWhatsAppHref,
   },
   {
     key: "training",
     title: "Entrenamiento Físico",
     description:
-      "Programas de fuerza y movilidad adaptados a tu fase de recuperacion para volver a rendir con seguridad.",
+      "Programas de fuerza y movilidad adaptados a tu nivel para mejorar salud, rendimiento y prevención de lesiones.",
+    bullets: [
+      "Grupos reducidos y entrenamiento personal",
+      "Rendimiento deportivo y prevención",
+      "Trabajo de fuerza como pilar",
+      "Formato presencial y online",
+    ],
     ctaLabel: "Reserva",
+    pageHref: "/servicios/entrenamiento",
     whatsappHref: trainingWhatsAppHref,
   },
 ] as const;
 
 export const pillars = [
-  "Diagnostico funcional y plan individual desde la primera sesion",
-  "Combinacion de terapia manual, ejercicio terapeutico y fuerza aplicada",
-  "Control del progreso con revisiones periodicas y objetivos concretos",
-  "Coordinacion entre fisioterapeuta y entrenador para una recuperacion completa",
+  "Tratamiento y entrenamiento con base científica",
+  "Plan individualizado según tu punto de partida",
+  "Comunicación real entre fisioterapia y entrenamiento",
+  "Seguimiento continuo para progresar con seguridad",
 ] as const;
 
 export const team = [
   {
     name: "Dra. Sofia Ramirez",
-    role: "Fisioterapia Musculoesqueletica",
-    bio: "12 anos de experiencia en rehabilitacion de lesiones deportivas y dolor cronico.",
+    role: "Fisioterapia Musculoesquelética",
+    bio: "12 años de experiencia en rehabilitación de lesiones deportivas y dolor crónico.",
   },
   {
     name: "Carlos Mena",
-    role: "Preparador Fisico",
-    bio: "Especialista en fuerza aplicada a readaptacion y retorno al deporte sin recaidas.",
+    role: "Preparador Físico",
+    bio: "Especialista en fuerza aplicada a readaptación y retorno al deporte sin recaídas.",
   },
 ] as const;
 
 export const testimonials = [
   {
     quote:
-      "Pase de no poder correr por dolor lumbar a volver a entrenar 3 dias por semana sin molestias.",
+      "Pasé de no poder correr por dolor lumbar a volver a entrenar 3 días por semana sin molestias.",
     author: "Miguel A.",
   },
   {
     quote:
-      "El trabajo conjunto entre fisioterapia y fuerza marco la diferencia. Trato cercano y muy profesional.",
+      "El trabajo conjunto entre fisioterapia y fuerza marcó la diferencia. Trato cercano y muy profesional.",
     author: "Andrea L.",
   },
   {
     quote:
-      "Desde la primera valoracion supe que habia metodo. Todo estaba medido y orientado a objetivos reales.",
+      "Desde la primera valoración supe que había método. Todo estaba medido y orientado a objetivos reales.",
     author: "Jorge P.",
   },
 ] as const;
@@ -80,8 +104,14 @@ export const homeJsonLd = {
   name: "Rehab Strength",
   medicalSpecialty: ["PhysicalTherapy", "SportsMedicine"],
   description:
-    "Centro de rehabilitacion con sesiones de fisioterapia y entrenamiento fisico personalizado.",
-  areaServed: "Espana",
+    "Centro de rehabilitación con sesiones de fisioterapia y entrenamiento físico personalizado en Molina de Segura, Murcia.",
+  areaServed: ["Molina de Segura", "Murcia"],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Molina de Segura",
+    addressRegion: "Murcia",
+    addressCountry: "ES",
+  },
   telephone: "+34 600 123 456",
-  email: "info@rehab-strength.com",
+  email: contactInfo.email,
 } as const;

@@ -3,48 +3,125 @@ import { physioWhatsAppHref, trainingWhatsAppHref } from "@/lib/home-page-data";
 export const detailedServices = [
   {
     title: "Fisioterapia",
-    subtitle: "Evaluacion, tratamiento y recuperacion funcional",
+    subtitle: "Evaluación, tratamiento y recuperación funcional",
     description:
-      "Sesiones enfocadas en dolor, lesion y recuperacion del movimiento con progresion clinica y seguimiento real.",
+      "Te ayudamos a reducir dolor, recuperar movimiento y volver a tu actividad con un enfoque clínico activo.",
+    pageHref: "/servicios/fisioterapia",
     bullets: [
-      "Valoracion funcional individual",
-      "Terapia manual y ejercicio terapeutico",
-      "Plan de recuperacion con objetivos",
-      "Seguimiento y ajuste segun evolucion",
+      "Valoración funcional individual",
+      "Terapia manual y ejercicio terapéutico",
+      "Plan de recuperación con objetivos",
+      "Seguimiento y ajuste según evolución",
     ],
     whatsappHref: physioWhatsAppHref,
   },
   {
     title: "Entrenamiento Fisico",
-    subtitle: "Fuerza, movilidad y readaptacion",
+    subtitle: "Fuerza, movilidad y readaptación",
     description:
-      "Programas de entrenamiento adaptados a tu nivel y fase de recuperacion para volver a entrenar con seguridad.",
+      "Entrenamiento guiado para ganar fuerza, mejorar movilidad y rendir mejor sin perder el control del proceso.",
+    pageHref: "/servicios/entrenamiento",
     bullets: [
       "Entrenamiento de fuerza guiado",
       "Movilidad y control motor",
-      "Readaptacion al deporte",
+      "Readaptación al deporte",
       "Progresiones semanales",
     ],
     whatsappHref: trainingWhatsAppHref,
   },
 ] as const;
 
+export const physioProcess = [
+  "Valoración inicial (entrevista)",
+  "Diagnóstico funcional",
+  "Tratamiento",
+  "Plan de ejercicio",
+] as const;
+
+export const physioTreatments = [
+  "Terapia manual",
+  "Ejercicio terapéutico",
+  "Electropunción",
+  "Ecografía",
+  "Diatermia",
+] as const;
+
+export const physioSpecificServices = [
+  "Lesiones musculares",
+  "Tendinopatías",
+  "Dolor lumbar",
+  "Pubalgia",
+  "Postcirugía",
+  "ATM",
+  "Suelo pélvico (si aplica)",
+] as const;
+
+export const trainingPrograms = [
+  {
+    title: "Grupos reducidos",
+    subtitle: "Fuerza guiada en grupo",
+    bullets: [
+      "Máximo 8 personas",
+      "Supervisión constante",
+      "Progresión estructurada",
+      "Trabajo de fuerza como pilar fundamental",
+    ],
+  },
+  {
+    title: "Entrenamiento personal",
+    subtitle: "Trabajo individualizado",
+    bullets: [
+      "Objetivos de salud, rendimiento o readaptación",
+      "Valoración inicial obligatoria (gratuita)",
+      "Objetivos claros y medibles",
+      "Trabajo de fuerza en niños y adultos mayores",
+    ],
+  },
+  {
+    title: "Rendimiento deportivo",
+    subtitle: "Preparación específica",
+    bullets: [
+      "Prevención de lesiones",
+      "Fuerza específica",
+      "Off season / pretemporada",
+      "Especialización en fútbol",
+    ],
+  },
+  {
+    title: "Entrenamiento online",
+    subtitle: "Presencial + online o solo online",
+    bullets: [
+      "Planificacion remota",
+      "Seguimiento del preparador físico",
+      "Compatible con sesiones presenciales",
+      "Ajustes según evolución y disponibilidad",
+    ],
+  },
+] as const;
+
+export const aboutCenterPoints = [
+  "Formación y actualización continua",
+  "Experiencia en fisioterapia, readaptación y fuerza",
+  "Filosofía de trabajo basada en evidencia",
+  "Atención cercana para generar confianza",
+] as const;
+
 export const pricingBlocks = [
   {
     category: "Fisioterapia",
     items: [
-      { name: "Sesion individual", price: "Consultar", note: "Duracion segun valoracion clinica" },
-      { name: "Bono 4 sesiones", price: "Consultar", note: "Para seguimiento continuo" },
-      { name: "Valoracion inicial", price: "Consultar", note: "Primera visita con plan de accion" },
+      { name: "Sesión individual", price: "Consultar", note: "Duración según valoración clínica" },
+      { name: "Bono 4 sesiones", price: "Consultar", note: "Ideal para tratamiento y seguimiento" },
+      { name: "Valoración inicial", price: "Consultar", note: "Primera visita con plan de acción" },
     ],
     whatsappHref: physioWhatsAppHref,
   },
   {
     category: "Entrenamiento Fisico",
     items: [
-      { name: "Sesion individual", price: "Consultar", note: "Entrenamiento guiado" },
-      { name: "Bono mensual", price: "Consultar", note: "Plan y seguimiento semanal" },
-      { name: "Programa de readaptacion", price: "Consultar", note: "Segun objetivos y frecuencia" },
+      { name: "Sesión individual", price: "Consultar", note: "Entrenamiento guiado" },
+      { name: "Bono mensual", price: "Consultar", note: "Planificación y seguimiento semanal" },
+      { name: "Programa de readaptación", price: "Consultar", note: "Según objetivos y frecuencia" },
     ],
     whatsappHref: trainingWhatsAppHref,
   },
@@ -60,7 +137,7 @@ export const trainingSchedule = [
     slots: ["08:00 - 09:00", "15:00 - 16:00", "20:00 - 21:00"],
   },
   {
-    day: "Miercoles",
+    day: "Miércoles",
     slots: ["07:00 - 08:00", "14:00 - 15:00", "19:00 - 20:00"],
   },
   {
@@ -74,7 +151,7 @@ export const trainingSchedule = [
 ] as const;
 
 export const scheduleNotes = [
-  "Plazas sujetas a disponibilidad y nivel del grupo.",
-  "Posibilidad de horarios individuales bajo consulta.",
-  "Confirmacion final por WhatsApp tras contacto.",
+  "Las plazas se asignan según disponibilidad y nivel del grupo.",
+  "También puedes solicitar horarios individuales.",
+  "La confirmación final se realiza por WhatsApp.",
 ] as const;
