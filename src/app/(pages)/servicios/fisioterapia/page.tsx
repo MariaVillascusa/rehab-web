@@ -24,7 +24,7 @@ export default function FisioterapiaPage() {
           <div>
             <p className="eyebrow">Fisioterapia</p>
             <h1 className="hero-title">Enfoque clínico, movimiento y fuerza</h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
               Tratamos dolor y lesiones con un enfoque activo: evaluación, tratamiento y ejercicio
               para que recuperes función y vuelvas a moverte con seguridad.
             </p>
@@ -37,7 +37,7 @@ export default function FisioterapiaPage() {
               </Link>
             </div>
           </div>
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#07101b]/75">
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_18px_36px_rgba(15,39,66,0.07)]">
             <div className="relative h-[360px] w-full">
               <Image src="/images/grey.avif" alt="Zona de trabajo del centro en Molina de Segura" fill className="object-cover" />
             </div>
@@ -53,7 +53,7 @@ export default function FisioterapiaPage() {
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {physioProcess.map((step, index) => (
             <div key={step} className="pillar-item flex items-start gap-4 p-4">
-              <span className="font-display text-3xl leading-none text-[#00a6ff]">
+              <span className="font-display text-3xl leading-none text-[#214ED1]">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <p className="pt-1">{step}</p>
@@ -66,11 +66,11 @@ export default function FisioterapiaPage() {
         <div className="grid gap-6 md:grid-cols-2">
           <article className="info-card">
             <p className="eyebrow">Tratamientos</p>
-            <h2 className="font-display text-3xl text-white">Herramientas de trabajo</h2>
-            <ul className="mt-6 grid gap-3 text-slate-200">
+            <h2 className="font-display text-3xl text-slate-900">Herramientas de trabajo</h2>
+            <ul className="mt-6 grid gap-3 text-slate-700">
               {physioTreatments.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-[#00a6ff]" />
+                  <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-[#214ED1]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -79,11 +79,11 @@ export default function FisioterapiaPage() {
 
           <article className="info-card">
             <p className="eyebrow">Servicios específicos</p>
-            <h2 className="font-display text-3xl text-white">Casos frecuentes</h2>
-            <ul className="mt-6 grid gap-3 text-slate-200">
+            <h2 className="font-display text-3xl text-slate-900">Casos frecuentes</h2>
+            <ul className="mt-6 grid gap-3 text-slate-700">
               {physioSpecificServices.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-[#00a6ff]" />
+                  <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-[#214ED1]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -93,10 +93,10 @@ export default function FisioterapiaPage() {
       </section>
 
       <section className="section-wrap pb-20">
-        <div className="rounded-2xl border border-white/10 bg-[#07101b]/75 p-6 shadow-[0_0_60px_rgba(0,166,255,0.12)] md:p-8">
+        <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,39,66,0.08)] md:p-8">
           <p className="eyebrow">Reserva</p>
-          <h2 className="font-display text-3xl text-white">Solicita tu valoración o cita de fisioterapia</h2>
-          <p className="mt-4 max-w-3xl text-slate-300">
+          <h2 className="font-display text-3xl text-slate-900">Solicita tu valoración o cita de fisioterapia</h2>
+          <p className="mt-4 max-w-3xl text-slate-600">
             Cuéntanos tu caso y te orientamos según tu dolor, lesión o fase de recuperación.
             Confirmamos la cita por WhatsApp.
           </p>

@@ -20,7 +20,7 @@ export default function EntrenamientoPage() {
           <div>
             <p className="eyebrow">Entrenamiento físico</p>
             <h1 className="hero-title">Fuerza como pilar del rendimiento y la salud</h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
               Entrenamiento para mejorar fuerza, rendimiento y salud con progresión estructurada,
               supervisión y foco en prevención de lesiones.
             </p>
@@ -33,7 +33,7 @@ export default function EntrenamientoPage() {
               </Link>
             </div>
           </div>
-          <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#07101b]/75">
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_18px_36px_rgba(15,39,66,0.07)]">
             <div className="relative h-[360px] w-full">
               <Image src="/images/green.avif" alt="Barra y discos de entrenamiento en el centro" fill className="object-cover" />
             </div>
@@ -46,11 +46,11 @@ export default function EntrenamientoPage() {
           {trainingPrograms.map((program) => (
             <article key={program.title} className="info-card">
               <p className="eyebrow">{program.title}</p>
-              <h2 className="font-display text-3xl text-white">{program.subtitle}</h2>
-              <ul className="mt-6 grid gap-3 text-slate-200">
+              <h2 className="font-display text-3xl text-slate-900">{program.subtitle}</h2>
+              <ul className="mt-6 grid gap-3 text-slate-700">
                 {program.bullets.map((bullet) => (
                   <li key={bullet} className="flex items-start gap-3">
-                    <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-[#00a6ff]" />
+                    <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-[#214ED1]" />
                     <span>{bullet}</span>
                   </li>
                 ))}
@@ -59,10 +59,10 @@ export default function EntrenamientoPage() {
           ))}
         </div>
 
-        <div className="mt-8 rounded-2xl border border-white/10 bg-[#07101b]/75 p-6 shadow-[0_0_60px_rgba(0,166,255,0.12)] md:p-8">
+        <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,39,66,0.08)] md:p-8">
           <p className="eyebrow">Reserva y plazas</p>
-          <h2 className="font-display text-3xl text-white">Cuéntanos qué necesitas y te orientamos</h2>
-          <p className="mt-4 max-w-3xl text-slate-300">
+          <h2 className="font-display text-3xl text-slate-900">Cuéntanos qué necesitas y te orientamos</h2>
+          <p className="mt-4 max-w-3xl text-slate-600">
             Indica si buscas grupos reducidos, entrenamiento personal, rendimiento deportivo u
             opción online. Te orientamos según tu objetivo, experiencia y disponibilidad.
           </p>
