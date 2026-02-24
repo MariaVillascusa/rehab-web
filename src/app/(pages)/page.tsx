@@ -6,7 +6,6 @@ import { WhatsAppButton } from "@/components/whatsapp-button";
 import {
   homeJsonLd,
   physioWhatsAppHref,
-  pillars,
   services,
   team,
   testimonials,
@@ -20,159 +19,263 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const serviceImages = ["/images/Pesas imagen.avif", "/images/green.avif"] as const;
+  const approachItems = [
+    {
+      title: "Base científica",
+      text: "Tratamiento y entrenamiento con base científica",
+    },
+    {
+      title: "Plan individual",
+      text: "Plan individualizado según tu punto de partida",
+    },
+    {
+      title: "Trabajo conjunto",
+      text: "Comunicación real entre fisioterapia y entrenamiento",
+    },
+    {
+      title: "Seguimiento",
+      text: "Seguimiento continuo para progresar con seguridad",
+    },
+    {
+      title: "Comunicación",
+      text: "Comunicación real entre fisioterapia y entrenamiento.",
+    },
+    {
+      title: "Control de cargas",
+      text: "Seguimiento de cargas y progresión adaptada a tu caso.",
+    },
+  ] as const;
+
   return (
     <>
-      <main id="inicio" className="page-flow">
-        <section className="hero-section">
-          <div className="electric-lines" aria-hidden="true" />
-          <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[1fr_1fr] lg:px-10 lg:py-24">
+      <main id="inicio" className="bg-white">
+        <section className="mx-auto w-full max-w-7xl px-4 pt-6 sm:px-6 lg:px-8 lg:pt-8">
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-4 lg:mb-8">
             <div>
-              <p className="mb-6 inline-flex items-center rounded-full border border-[#00a6ff]/45 bg-[#00a6ff]/10 px-4 py-1 text-sm font-semibold text-[#8ed8ff]">
-                Centro de fisioterapia y rendimiento en Molina de Segura (Murcia)
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#214ED1]">
+                Rehab Strength · Molina de Segura
               </p>
-              <h1 className="hero-title">
-                <span className="text-[clamp(2.8rem,6.8vw,4.6rem)] leading-[0.95]">
-                  Tratamos el dolor. <span className="text-[#00a6ff]">Construimos fuerza.</span>
-                </span>
-              </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
-                En Rehab Strength combinamos fisioterapia y entrenamiento para ayudarte a recuperarte,
-                volver a tu actividad y reducir el riesgo de recaídas.
+              <p className="mt-2 max-w-2xl text-sm text-slate-600 sm:text-base">
+                Centro de fisioterapia y rendimiento con enfoque clínico y progresión de fuerza.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <a href="#reserva" className="btn-primary">
-                  Reserva tu valoración / cita
-                </a>
-                <Link href="/servicios" className="btn-ghost">
-                  Ver servicios
-                </Link>
-              </div>
             </div>
+            <div className="flex flex-wrap gap-3">
+              <a href="#reserva" className="btn-primary">
+                Reserva cita
+              </a>
+              <Link href="/servicios" className="btn-ghost">
+                Ver servicios
+              </Link>
+            </div>
+          </div>
 
-            <div>
-              <div className="stats-panel overflow-hidden p-0">
-                <div className="relative h-[320px] w-full md:h-[420px]">
-                  <Image
-                    src="/images/green.avif"
-                    alt="Material de entrenamiento en el centro Rehab Strength"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#03060c]/75 via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/10 bg-[#050a12]/80 p-4 backdrop-blur-sm">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8ed8ff]">
-                      Centro especializado
-                    </p>
-                    <p className="mt-2 text-sm text-slate-200">
-                      Recuperación y fuerza en un mismo proceso, con seguimiento y progresión.
-                    </p>
-                  </div>
+          <div className="relative overflow-hidden rounded-[1.9rem] border border-slate-200 bg-white">
+            <div className="relative h-[480px] w-full sm:h-[560px] lg:h-[640px]">
+              <Image
+                src="/images/Pesas imagen.avif"
+                alt="Pesas en la zona de entrenamiento del centro Rehab Strength"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#001391]/72 via-[#001391]/28 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+
+              <div className="absolute inset-x-0 top-0 flex items-center justify-between gap-4 p-5 sm:p-7">
+                <div className="rounded-full border border-white/40 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm">
+                  Recuperación + rendimiento
+                </div>
+                <div className="hidden rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm sm:block">
+                  Fisioterapia · Entrenamiento
+                </div>
+              </div>
+
+              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-7 lg:p-10">
+                <div className="max-w-3xl">
+                  <h1 className="font-display text-[clamp(2.15rem,5.8vw,4.4rem)] leading-[0.95] text-white">
+                    Donde la recuperación se encuentra con el rendimiento
+                  </h1>
+                  <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/88 sm:text-lg">
+                    Tratamos el dolor y construimos fuerza con un plan coordinado para volver a moverte,
+                    entrenar y progresar con seguridad.
+                  </p>
+                </div>
+                <div className="mt-8 grid gap-4 border-t border-white/20 pt-4 text-white/90 sm:grid-cols-[1fr_auto] sm:items-center">
+                  <p className="text-sm leading-relaxed">
+                    Valoración, tratamiento y progresión de cargas en el mismo proceso.
+                  </p>
+                  <a
+                    href="#servicios"
+                    className="inline-flex items-center text-sm font-semibold text-white transition hover:text-white/80"
+                  >
+                    Explorar servicios →
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="servicios" className="section-wrap">
-          <div className="section-heading">
-            <p className="eyebrow">Qué ofrecemos</p>
-            <h2>Dos servicios que trabajan juntos para acelerar tu recuperación.</h2>
+        <section className="mx-auto w-full max-w-7xl px-6 pt-12 lg:px-8" aria-label="Ventajas principales">
+          <div className="grid gap-5 border-y border-slate-200 py-6 md:grid-cols-3">
+            <article className="relative border-l border-slate-200 pl-14 pr-2">
+              <span
+                className="absolute left-0 top-0 grid h-9 w-9 place-items-center rounded-full bg-[#214ED1]/8 text-[#214ED1]"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M4 13h4l2-4 4 8 2-4h4" />
+                </svg>
+              </span>
+              <h3 className="font-display text-[1.08rem] leading-[1.05] text-[#133242]">
+                Recuperación con criterio clínico
+              </h3>
+              <p className="mt-2 text-[0.95rem] leading-[1.45] text-slate-600">
+                Tratamiento y ejercicio guiado para reducir dolor y recuperar función real.
+              </p>
+            </article>
+            <article className="relative border-l border-slate-200 pl-14 pr-2">
+              <span
+                className="absolute left-0 top-0 grid h-9 w-9 place-items-center rounded-full bg-[#214ED1]/8 text-[#214ED1]"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M4 18V6m8 12V10m8 8V4" />
+                </svg>
+              </span>
+              <h3 className="font-display text-[1.08rem] leading-[1.05] text-[#133242]">
+                Progresión y seguimiento
+              </h3>
+              <p className="mt-2 text-[0.95rem] leading-[1.45] text-slate-600">
+                Objetivos claros y control de cargas para que avances con seguridad.
+              </p>
+            </article>
+            <article className="relative border-l border-slate-200 pl-14 pr-2">
+              <span
+                className="absolute left-0 top-0 grid h-9 w-9 place-items-center rounded-full bg-[#214ED1]/8 text-[#214ED1]"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M8 12h8M12 8v8" />
+                  <circle cx="12" cy="12" r="8.5" />
+                </svg>
+              </span>
+              <h3 className="font-display text-[1.08rem] leading-[1.05] text-[#133242]">
+                Un solo centro, dos servicios
+              </h3>
+              <p className="mt-2 text-[0.95rem] leading-[1.45] text-slate-600">
+                Fisioterapia y entrenamiento coordinados para evitar recaídas y mejorar rendimiento.
+              </p>
+            </article>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {services.map((service) => (
-              <article key={service.title} className="info-card flex flex-col">
-                <span className="icon-badge" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                    <path d="M5 12h14M12 5v14" />
-                    <circle cx="12" cy="12" r="9" />
-                  </svg>
-                </span>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <ul className="mt-4 grid gap-2 text-sm text-slate-300">
-                  {service.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-start gap-2">
-                      <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#00a6ff]" />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-5 flex flex-wrap gap-3">
-                  <Link href={service.pageHref} className="btn-ghost">
-                    Ver {service.title.toLowerCase()}
-                  </Link>
-                  <WhatsAppButton href={service.whatsappHref} className="btn-ghost gap-2">
-                    {service.ctaLabel}
-                  </WhatsAppButton>
+        </section>
+
+        <section id="servicios" className="mx-auto w-full max-w-7xl px-6 pt-18 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#214ED1]">
+                Nuestros servicios
+              </p>
+              <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3.4rem)] leading-[0.95] text-[#0c1f4f]">
+                Fisioterapia y fuerza con un mismo criterio clínico.
+              </h2>
+            </div>
+            <p className="max-w-4xl text-lg leading-relaxed text-slate-600">
+              Diseñamos un proceso continuo para que no tengas que separar tratamiento y progreso.
+              Valoramos tu caso, tratamos el dolor y planificamos el entrenamiento para recuperar
+              función y reducir recaídas.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-0 border-y border-slate-200">
+            {services.map((service, index) => (
+              <article
+                key={service.title}
+                className="group/program grid gap-6 border-b border-slate-200 py-6 last:border-b-0 lg:grid-cols-[1.08fr_0.92fr] lg:items-center"
+              >
+                <div className="min-w-0">
+                  <div className="program-row">
+                    <div className="program-row-track">
+                      <span className="program-row-index">{String(index + 1).padStart(2, "0")}</span>
+                      <h3 className="program-row-title">{service.title}</h3>
+                      <span className="program-row-meta">Programa</span>
+                    </div>
+                    <div aria-hidden="true" className="program-row-track program-row-track-clone">
+                      <span className="program-row-index">{String(index + 1).padStart(2, "0")}</span>
+                      <span className="program-row-title">{service.title}</span>
+                      <span className="program-row-meta">Programa</span>
+                    </div>
+                  </div>
+                  <p className="mt-4 max-w-[40rem] text-lg leading-relaxed text-slate-600">
+                    {service.description}
+                  </p>
+                  <ul className="mt-5 grid gap-2 text-sm text-slate-600">
+                    {service.bullets.map((bullet) => (
+                      <li key={bullet} className="flex items-start gap-2">
+                        <span
+                          aria-hidden="true"
+                          className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#214ED1]"
+                        />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    <Link href={service.pageHref} className="btn-ghost">
+                      Ver {service.title.toLowerCase()}
+                    </Link>
+                    <WhatsAppButton href={service.whatsappHref} className="btn-ghost gap-2">
+                      {service.ctaLabel}
+                    </WhatsAppButton>
+                  </div>
+                </div>
+
+                <div className="relative h-56 w-full overflow-hidden rounded-[1.25rem] border border-slate-200 bg-slate-100 sm:h-64">
+                  <Image
+                    src={serviceImages[index % serviceImages.length]}
+                    alt={service.title}
+                    fill
+                    className="object-cover transition duration-500 group-hover/program:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#001391]/20 to-transparent" />
                 </div>
               </article>
             ))}
           </div>
-          <div className="mt-6 flex flex-wrap gap-4">
-            <Link href="/servicios" className="btn-ghost">
-              Ver detalle de servicios
-            </Link>
-            <Link href="/tarifas" className="btn-ghost">
-              Ver tarifas
-            </Link>
-            <Link href="/horarios-entrenamientos" className="btn-ghost">
-              Ver horarios
-            </Link>
-          </div>
         </section>
 
         <section id="metodologia" className="section-wrap">
-          <div className="section-heading">
-            <p className="eyebrow">Diferencial del centro</p>
-            <h2>No somos un gimnasio generalista ni un centro de “solo camilla”.</h2>
-          </div>
-          <div className="mt-10 grid gap-4">
-            {pillars.map((item) => (
-              <div key={item} className="pillar-item">
-                <span aria-hidden="true" className="bolt-dot" />
-                <p>{item}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#214ED1]">
+              Enfoque de trabajo
+            </p>
+            <h2 className="mt-3 max-w-3xl font-display text-[clamp(2rem,4vw,3.35rem)] leading-[0.95] text-[#0c1f4f]">
+              Equipo clínico y entrenamiento coordinados para acompañarte en todo el proceso.
+            </h2>
+            <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-600">
+              Unificamos valoración, tratamiento y progresión de fuerza en un mismo plan para que
+              entiendas qué se hace, por qué se hace y cómo avanzar sin recaídas.
+            </p>
 
-        <section className="section-wrap">
-          <div className="section-heading">
-            <p className="eyebrow">Sobre nosotros</p>
-            <h2>Experiencia clínica y entrenamiento para acompañarte en todo el proceso.</h2>
-          </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#07101b]/75">
-              <div className="relative h-80 w-full lg:h-full lg:min-h-[420px]">
-                <Image src="/images/grey.avif" alt="Rack y zona de trabajo del centro en Molina de Segura" fill className="object-cover" />
-              </div>
-            </div>
-            <div className="info-card">
-              <h3 className="font-display text-3xl text-white">Salud y rendimiento en el mismo plan</h3>
-              <p className="mt-4 text-slate-300">
-                Trabajamos con personas que quieren dejar atrás el dolor, recuperar su actividad y
-                seguir entrenando con una base sólida y segura.
-              </p>
-              <div className="mt-6 grid gap-3">
-                <div className="pillar-item px-4 py-3">
-                  <p>Formación y actualización continua del equipo.</p>
-                </div>
-                <div className="pillar-item px-4 py-3">
-                  <p>Comunicación entre fisioterapia y entrenamiento para cada caso.</p>
-                </div>
-                <div className="pillar-item px-4 py-3">
-                  <p>Seguimiento continuo y objetivos claros para que sepas cómo avanzas.</p>
-                </div>
-              </div>
-              <div className="mt-6 flex flex-wrap gap-4">
-                <Link href="/servicios/fisioterapia" className="btn-ghost">
-                  Fisioterapia
-                </Link>
-                <Link href="/servicios/entrenamiento" className="btn-ghost">
-                  Entrenamiento
-                </Link>
-              </div>
+            <div className="mt-10 grid gap-x-7 gap-y-5 md:grid-cols-2 lg:gap-x-8 lg:gap-y-6">
+              {approachItems.map((row, index) => (
+                <article
+                  key={row.title}
+                  className="mt-0"
+                >
+                  <div
+                    className={`rounded-2xl px-5 py-5 shadow-[0_10px_24px_rgba(33,78,209,0.12)] ring-1 ring-inset ring-white/14 sm:px-6 sm:py-6 ${
+                      index % 2 === 0 ? "bg-[#214ED1]" : "bg-[#001391]"
+                    }`}
+                  >
+                    <p className="font-display text-2xl leading-tight text-white">{row.title}</p>
+                    <p className="mt-3 max-w-[34rem] text-base leading-relaxed text-white/82 sm:text-[1.05rem]">
+                    {row.text}
+                    </p>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -181,19 +284,29 @@ export default function Home() {
           <div className="section-heading">
             <p className="eyebrow">Equipo profesional</p>
             <h2>Expertos en recuperación funcional, readaptación y fuerza terapéutica.</h2>
+            <p className="mt-4 max-w-4xl text-slate-600">
+              Trabajamos con personas que quieren dejar atrás el dolor, recuperar su actividad y
+              seguir entrenando con una base sólida y segura, con seguimiento continuo y objetivos claros.
+            </p>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
             {team.map((member) => (
-              <article key={member.name} className="team-card">
-                <div className="avatar-ring" aria-hidden="true">
-                  {member.name
-                    .split(" ")
-                    .map((chunk) => chunk[0])
-                    .join("")}
+              <article key={member.name} className="border-t border-slate-200 pt-6">
+                <div className="flex items-start gap-4">
+                  <div className="avatar-ring" aria-hidden="true">
+                    {member.name
+                      .split(" ")
+                      .map((chunk) => chunk[0])
+                      .join("")}
+                  </div>
+                  <div>
+                    <h3 className="font-display text-2xl text-slate-900">{member.name}</h3>
+                    <p className="mt-1 text-sm font-semibold uppercase tracking-[0.12em] text-[#001391]">
+                      {member.role}
+                    </p>
+                    <p className="mt-3 text-slate-600">{member.bio}</p>
+                  </div>
                 </div>
-                <h3>{member.name}</h3>
-                <p className="role">{member.role}</p>
-                <p>{member.bio}</p>
               </article>
             ))}
           </div>
@@ -204,11 +317,16 @@ export default function Home() {
             <p className="eyebrow">Testimonios</p>
             <h2>Personas que volvieron a moverse, entrenar y confiar en su cuerpo.</h2>
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-7 md:grid-cols-3">
             {testimonials.map((item) => (
-              <blockquote key={item.author} className="testimonial-card">
-                <p>{item.quote}</p>
-                <footer>{item.author}</footer>
+              <blockquote
+                key={item.author}
+                className="border-t border-slate-200 pt-5 text-slate-600"
+              >
+                <p className="leading-relaxed">{item.quote}</p>
+                <footer className="mt-4 text-sm font-semibold uppercase tracking-[0.12em] text-slate-900">
+                  {item.author}
+                </footer>
               </blockquote>
             ))}
           </div>

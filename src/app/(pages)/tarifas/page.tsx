@@ -17,7 +17,7 @@ export default function TarifasPage() {
           <div className="mx-auto w-full max-w-6xl px-6 py-20 lg:px-10 lg:py-24">
           <p className="eyebrow">Tarifas</p>
           <h1 className="hero-title">Opciones de sesiones y bonos</h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-300">
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-600">
             Consulta las opciones de sesiones y bonos de fisioterapia y entrenamiento. Si tienes
             dudas, te orientamos por WhatsApp según tu objetivo y la frecuencia recomendada.
           </p>
@@ -29,18 +29,18 @@ export default function TarifasPage() {
             {pricingBlocks.map((block) => (
               <article key={block.category} className="info-card flex h-full flex-col">
                 <p className="eyebrow">{block.category}</p>
-                <h2 className="font-display text-3xl text-white">Tarifas {block.category.toLowerCase()}</h2>
+                <h2 className="font-display text-3xl text-slate-900">Tarifas {block.category.toLowerCase()}</h2>
                 <div className="mt-6 grid gap-4">
                   {block.items.map((item) => (
                     <div
                       key={item.name}
-                      className="rounded-xl border border-white/10 bg-white/3 p-4"
+                      className="rounded-xl border border-slate-200 bg-slate-50 p-4"
                     >
                       <div className="flex items-center justify-between gap-4">
-                        <p className="font-semibold text-white">{item.name}</p>
-                        <p className="font-display text-2xl text-[#8ed8ff]">{item.price}</p>
+                        <p className="font-semibold text-slate-900">{item.name}</p>
+                        <p className="font-display text-2xl text-[#214ED1]">{item.price}</p>
                       </div>
-                      <p className="mt-2 text-sm text-slate-300">{item.note}</p>
+                      <p className="mt-2 text-sm text-slate-600">{item.note}</p>
                     </div>
                   ))}
                 </div>
@@ -51,7 +51,7 @@ export default function TarifasPage() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-2xl border border-[#00a6ff]/20 bg-[#07101b]/75 p-5 text-sm text-slate-300">
+          <div className="mt-8 rounded-2xl border border-[#214ED1]/20 bg-[#214ED1]/5 p-5 text-sm text-slate-700">
             <p>
               Los importes pueden variar según frecuencia, duración de sesión y objetivos de
               recuperación o readaptación.
