@@ -60,7 +60,7 @@ export default function Home() {
                 Centro de fisioterapia y rendimiento con enfoque clínico y progresión de fuerza.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-1 md:gap-3">
               <a href="#reserva" className="btn-primary">
                 Reserva cita
               </a>
@@ -82,8 +82,8 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-[#001391]/72 via-[#001391]/28 to-transparent" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
 
-              <div className="absolute inset-x-0 top-0 flex items-center justify-between gap-4 p-5 sm:p-7">
-                <div className="rounded-full border border-white/40 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm">
+              <div className="absolute inset-x-0 top-0 flex items-center justify-between md:flex-row gap-4 p-5 sm:p-7">
+                <div className="rounded-full border border-white/40 bg-white/10 px-4 py-2 text-xs font-semibold uppercase sm:tracking-[0.2em] text-white backdrop-blur-sm">
                   Recuperación + rendimiento
                 </div>
                 <div className="hidden rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm sm:block">
@@ -221,7 +221,7 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-5 flex flex-wrap gap-3">
+                  <div className="mt-5 flex flex-col sm:flex-row flex-wrap gap-2 text-sm">
                     <Link href={service.pageHref} className="btn-ghost">
                       Ver {service.title.toLowerCase()}
                     </Link>
