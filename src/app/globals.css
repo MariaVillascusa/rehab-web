@@ -482,9 +482,4 @@ body {
   .section-wrap {
     padding-top: 3.2rem;
   }
-
-  .btn-primary,
-  .btn-ghost {
-    font-size: small;
-  }
 }
