@@ -51,7 +51,7 @@ export default function Home() {
     <>
       <main id="inicio" className="bg-white">
         <section className="mx-auto w-full max-w-7xl px-4 pt-6 sm:px-6 lg:px-8 lg:pt-8">
-          <div className="px-3 mb-6 flex flex-wrap items-end justify-between gap-4 lg:mb-8">
+          <div className="px-3 mb-6 flex flex-col items-center md:flex-wrap md:items-end justify-between gap-4 lg:mb-8">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--electric)]">
                 Rehab Strength · Molina de Segura
@@ -60,18 +60,18 @@ export default function Home() {
                 Centro de fisioterapia y rendimiento con enfoque clínico y progresión de fuerza.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3 ">
-              <a href="#reserva" className="btn-primary">
+           <div className="flex flex-wrap flex-row gap-4 md:gap-3">
+              <a href="#reserva" className="btn-primary text-nowrap">
                 Reserva cita
               </a>
-              <Link href="/servicios" className="btn-ghost">
+              <Link href="/servicios" className="btn-ghost text-nowrap">
                 Ver servicios
               </Link>
             </div>
           </div>
 
           <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white">
-            <div className="relative h-[480px] w-full sm:h-[560px] lg:h-[640px]">
+            <div className="relative h-[430px] w-full sm:h-[560px] lg:h-[640px]">
               <Image
                 src="/images/Pesas imagen.avif"
                 alt="Pesas en la zona de entrenamiento del centro Rehab Strength"
@@ -223,7 +223,7 @@ export default function Home() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-5 flex flex-wrap gap-3">
+                  <div className="mt-5 flex flex-col sm:flex-row flex-wrap gap-2 text-sm">
                     <Link href={service.pageHref} className="btn-ghost">
                       Ver {service.title.toLowerCase()}
                     </Link>
@@ -294,14 +294,14 @@ export default function Home() {
           <div className="mt-10 grid gap-8 md:grid-cols-2">
             {team.map((member) => (
               <article key={member.name} className="border-t border-slate-200 pt-6">
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col items-center md:flex-row md:items-start gap-4">
                   <div className="avatar-ring" aria-hidden="true">
                     {member.name
                       .split(" ")
                       .map((chunk) => chunk[0])
                       .join("")}
                   </div>
-                  <div>
+                  <div className="text-center md:text-start">
                     <h3 className="font-display text-2xl text-slate-900">{member.name}</h3>
                     <p className="mt-1 text-sm font-semibold uppercase tracking-[0.12em] text-[#0371a8]">
                       {member.role}
