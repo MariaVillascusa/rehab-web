@@ -180,7 +180,11 @@ body {
 .pillar-item {
   border-radius: 1.25rem;
   border: 1px solid rgba(221, 224, 226, 0.95);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(252, 253, 253, 1));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1),
+    rgba(252, 253, 253, 1)
+  );
 }
 
 .stats-panel {
@@ -194,7 +198,9 @@ body {
 .team-card,
 .testimonial-card {
   padding: 1.4rem;
-  transition: border-color 220ms ease, transform 220ms ease;
+  transition:
+    border-color 220ms ease,
+    transform 220ms ease;
 }
 
 .info-card:hover,
@@ -292,7 +298,11 @@ body {
   inset: 0;
   border-radius: inherit;
   background:
-    radial-gradient(circle at 12% 10%, rgba(33, 78, 209, 0.07), transparent 38%),
+    radial-gradient(
+      circle at 12% 10%,
+      rgba(33, 78, 209, 0.07),
+      transparent 38%
+    ),
     radial-gradient(circle at 88% 86%, rgba(0, 19, 145, 0.05), transparent 34%);
   pointer-events: none;
 }
@@ -325,7 +335,11 @@ body {
   border-top: 1px solid rgba(214, 217, 220, 0.9);
   border-bottom: 1px solid rgba(214, 217, 220, 0.9);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.75),
+      rgba(255, 255, 255, 0.75)
+    ),
     repeating-linear-gradient(
       -12deg,
       transparent,
@@ -467,5 +481,10 @@ body {
 
   .section-wrap {
     padding-top: 3.2rem;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    font-size: small;
   }
 }

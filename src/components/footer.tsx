@@ -14,91 +14,114 @@ import {
 } from "@/components/Icons";
 
 export function Footer() {
-  return (
-    <footer className="border-t bg-footer mt-9">
-      <div className="mx-auto w-full px-6 py-12 lg:px-10">
-        {/* TOP SECTION */}
-        <div className="grid gap-2 lg:grid-cols-2 ">
-          {/* COLUMN 1 */}
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-3">
-              <InstagramIcon />
-              <a
-                href="https://www.instagram.com/rm_fisiodeportiva/"
-                aria-label="Instagram"
-                target="_blanck"
-              >
-                {contactInfo.instagramLabel}
-              </a>
-            </div>
+  const fullAddress = `${homeJsonLd.address.addressStreet}, ${homeJsonLd.address.addressLocality}, ${homeJsonLd.address.addressRegion}, ${homeJsonLd.address.addressCountry}, ${homeJsonLd.address.addressPostCode}`;
 
-            <div className="flex items-center gap-3">
+  return (
+    <footer className="mt-12 border-t bg-black text-white">
+      <div className="mx-auto w-full max-w-7xl px-6 py-12">
+
+        {/* TOP SECTION */}
+        <div className="grid gap-10 md:grid-cols-2">
+
+          {/* COLUMN 1 – CONTACT */}
+          <div className="space-y-4 text-sm">
+
+            <a
+              href="https://www.instagram.com/rm_fisiodeportiva/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 hover:opacity-80"
+            >
+              <InstagramIcon />
+              <span>{contactInfo.instagramLabel}</span>
+            </a>
+
+            <a
+              href={`mailto:${contactInfo.email}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 hover:opacity-80"
+            >
               <EmailIcon />
-              <a href={`mailto:${contactInfo.email}`} target="_blanck">
-                {contactInfo.email}
-              </a>
-            </div>
+              <span className="break-all">{contactInfo.email}</span>
+            </a>
 
             <div className="flex items-center gap-3">
               <PhoneIcon />
-              <p>Fisioterapia:</p>
-              <a href={physioWhatsAppHref} target="_blank">
+              <span className="font-medium">Fisioterapia:</span>
+              <a
+                href={physioWhatsAppHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80"
+              >
                 {contactInfo.physioPhoneDisplay}
               </a>
             </div>
 
             <div className="flex items-center gap-3">
               <PhoneIcon />
-              <p>Entrenamiento:</p>
-              <a href={trainingWhatsAppHref} target="_blank">
+              <span className="font-medium">Entrenamiento:</span>
+              <a
+                href={trainingWhatsAppHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80"
+              >
                 {contactInfo.trainingPhoneDisplay}
               </a>
             </div>
 
-            <div className="flex items-center gap-3">
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-3 hover:opacity-80"
+            >
               <LocationIcon />
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                  `${homeJsonLd.address.addressStreet}, ${homeJsonLd.address.addressLocality}, ${homeJsonLd.address.addressRegion}, ${homeJsonLd.address.addressCountry}, ${homeJsonLd.address.addressPostCode}`,
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <p>
-                  {homeJsonLd.address.addressStreet} ,{" "}
-                  {homeJsonLd.address.addressLocality},{" "}
-                  {homeJsonLd.address.addressRegion},{" "}
-                  {homeJsonLd.address.addressCountry},{" "}
-                  {homeJsonLd.address.addressPostCode}
-                </p>
-              </a>
-            </div>
+              <span className="leading-relaxed">
+                {fullAddress}
+              </span>
+            </a>
+
           </div>
 
-          {/* COLUMN 2 */}
-          <div className="flex flex-col gap-20 items-end">
-            <div className="flex flex-col gap-4 text-end">
-              <Link href="/servicios">Servicios</Link>
-              <Link href="/tarifas">Tarifas</Link>
-              <Link href="/horarios-entrenamientos">Horarios</Link>
-            </div>
+          {/* COLUMN 2 – NAVIGATION */}
+          <div className="flex flex-col gap-4 text-sm md:items-end md:text-right">
+            <Link href="/servicios" className="hover:opacity-80">
+              Servicios
+            </Link>
+            <Link href="/tarifas" className="hover:opacity-80">
+              Tarifas
+            </Link>
+            <Link href="/horarios-entrenamientos" className="hover:opacity-80">
+              Horarios
+            </Link>
           </div>
         </div>
 
         {/* DIVIDER */}
-        <div className="my-3 border-t" />
+        <div className="my-8 border-t border-white/20" />
 
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between mx-5">
-          <p className="text-sm">
-            © {new Date().getFullYear()} Rehab Strength. Todos los derechos
-            reservados.
+        {/* BOTTOM SECTION */}
+        <div className="flex flex-col gap-4 text-center text-xs md:flex-row md:items-center md:justify-between md:text-left">
+
+          <p>
+            © {new Date().getFullYear()} Rehab Strength. Todos los derechos reservados.
           </p>
 
-          <div className="flex flex-wrap gap-4 text-sm">
-            <Link href="/aviso-legal">Aviso Legal</Link>
-            <Link href="/politica-privacidad">Política de Privacidad</Link>
-            <Link href="/politica-cookies">Política de Cookies</Link>
+          <div className="flex flex-wrap justify-center gap-4 md:justify-end">
+            <Link href="/aviso-legal" className="hover:opacity-80">
+              Aviso Legal
+            </Link>
+            <Link href="/politica-privacidad" className="hover:opacity-80">
+              Política de Privacidad
+            </Link>
+            <Link href="/politica-cookies" className="hover:opacity-80">
+              Política de Cookies
+            </Link>
           </div>
+
         </div>
       </div>
     </footer>
