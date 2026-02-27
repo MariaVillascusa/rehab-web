@@ -14,7 +14,7 @@ export default function TarifasPage() {
     <main className="page-flow">
         <section className="hero-section">
           <div className="electric-lines" aria-hidden="true" />
-          <div className="mx-auto w-full max-w-6xl px-6 py-20 lg:px-10 lg:py-24">
+          <div className="mx-auto w-full max-w-6xl px-6 pt-14 lg:px-10 lg:pt-24">
           <p className="eyebrow">Tarifas</p>
           <h1 className="hero-title">Opciones de sesiones y bonos</h1>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-600">

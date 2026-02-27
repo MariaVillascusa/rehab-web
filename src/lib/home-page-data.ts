@@ -108,9 +108,11 @@ export const homeJsonLd = {
   areaServed: ["Molina de Segura", "Murcia"],
   address: {
     "@type": "PostalAddress",
+    addressStreet:"Calle Campoamor 86",
     addressLocality: "Molina de Segura",
     addressRegion: "Murcia",
-    addressCountry: "ES",
+    addressCountry: "España",
+    addressPostCode:"30500"
   },
   telephone: "+34 600 123 456",
   email: contactInfo.email,
