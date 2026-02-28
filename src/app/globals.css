@@ -279,8 +279,8 @@ body {
 }
 
 .avatar-ring {
-  width: 3rem;
-  height: 3rem;
+  width: 200px;
+  height: 200px;
   border-radius: 999px;
   display: grid;
   place-items: center;
@@ -506,17 +506,5 @@ body {
   .btn-secondary,
   .btn-ghost {
     font-size: small;
-  }
-
-  .avatar-ring {
-    width: 80%;
-    height: 200px;
-
-    display: grid;
-    place-items: center;
-    font-weight: 800;
-    color: #fff;
-    background: linear-gradient(135deg, #214ed1, #001391);
-    box-shadow: 0 0 0 3px rgba(33, 78, 209, 0.12);
   }
 }

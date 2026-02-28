@@ -294,14 +294,14 @@ export default function Home() {
           <div className="mt-10 grid gap-8 md:grid-cols-2">
             {team.map((member) => (
               <article key={member.name} className="border-t border-slate-200 pt-6">
-                <div className="flex flex-col items-center md:flex-row md:items-start gap-4">
+                <div className="flex flex-col items-center gap-4">
                   <div className="avatar-ring" aria-hidden="true">
                     {member.name
                       .split(" ")
                       .map((chunk) => chunk[0])
                       .join("")}
                   </div>
-                  <div className="text-center md:text-start">
+                  <div className="text-center mt-4">
                     <h3 className="font-display text-2xl text-slate-900">{member.name}</h3>
                     <p className="mt-1 text-sm font-semibold uppercase tracking-[0.12em] text-[#0371a8]">
                       {member.role}
