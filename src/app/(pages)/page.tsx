@@ -51,7 +51,7 @@ export default function Home() {
     <>
       <main id="inicio" className="bg-white">
         <section className="mx-auto w-full max-w-7xl px-4 pt-6 sm:px-6 lg:px-8 lg:pt-8">
-          <div className="px-3 mb-6 flex flex-col items-center md:flex-wrap md:items-end justify-between gap-4 lg:mb-8">
+          <div className="px-3 mb-6 flex flex-col md:flex-row items-center md:flex-wrap md:items-end justify-between gap-4 lg:mb-8">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--electric)]">
                 Rehab Strength · Molina de Segura
