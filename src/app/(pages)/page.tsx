@@ -51,27 +51,27 @@ export default function Home() {
     <>
       <main id="inicio" className="bg-white">
         <section className="mx-auto w-full max-w-7xl px-4 pt-6 sm:px-6 lg:px-8 lg:pt-8">
-          <div className="mb-6 flex flex-wrap items-end justify-between gap-4 lg:mb-8">
+          <div className="px-3 mb-6 flex flex-col md:flex-row items-center md:flex-wrap md:items-end justify-between gap-4 lg:mb-8">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#214ED1]">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--electric)]">
                 Rehab Strength · Molina de Segura
               </p>
               <p className="mt-2 max-w-2xl text-sm text-slate-600 sm:text-base">
                 Centro de fisioterapia y rendimiento con enfoque clínico y progresión de fuerza.
               </p>
             </div>
-            <div className="flex flex-wrap gap-1 md:gap-3">
-              <a href="#reserva" className="btn-primary">
+           <div className="flex flex-wrap flex-row gap-4 md:gap-3">
+              <a href="#reserva" className="btn-primary text-nowrap">
                 Reserva cita
               </a>
-              <Link href="/servicios" className="btn-ghost">
+              <Link href="/servicios" className="btn-ghost text-nowrap">
                 Ver servicios
               </Link>
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[1.9rem] border border-slate-200 bg-white">
-            <div className="relative h-[480px] w-full sm:h-[560px] lg:h-[640px]">
+          <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white">
+            <div className="relative h-[430px] w-full sm:h-[560px] lg:h-[640px]">
               <Image
                 src="/images/Pesas imagen.avif"
                 alt="Pesas en la zona de entrenamiento del centro Rehab Strength"
@@ -79,14 +79,14 @@ export default function Home() {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#001391]/72 via-[#001391]/28 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-l from-[var(--electric)]/20 via-[var(--electric)]/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-transparent" />
 
-              <div className="absolute inset-x-0 top-0 flex items-center justify-between md:flex-row gap-4 p-5 sm:p-7">
-                <div className="rounded-full border border-white/40 bg-white/10 px-4 py-2 text-xs font-semibold uppercase sm:tracking-[0.2em] text-white backdrop-blur-sm">
+              <div className="absolute inset-x-0 top-0 flex items-center justify-between gap-4 p-5 sm:p-7">
+                <div className="rounded-lg border border-white/40 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm">
                   Recuperación + rendimiento
                 </div>
-                <div className="hidden rounded-full border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm sm:block">
+                <div className="hidden rounded-lg border border-white/30 bg-white/10 px-4 py-2 text-xs font-semibold text-white backdrop-blur-sm sm:block">
                   Fisioterapia · Entrenamiento
                 </div>
               </div>
@@ -121,7 +121,7 @@ export default function Home() {
           <div className="grid gap-5 border-y border-slate-200 py-6 md:grid-cols-3">
             <article className="relative border-l border-slate-200 pl-14 pr-2">
               <span
-                className="absolute left-0 top-0 grid h-9 w-9 place-items-center rounded-full bg-[#214ED1]/8 text-[#214ED1]"
+                className="absolute left-2 top-0 grid h-9 w-9 place-items-center rounded-lg bg-[var(--electric)]/8 text-[var(--electric)]"
                 aria-hidden="true"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -137,7 +137,7 @@ export default function Home() {
             </article>
             <article className="relative border-l border-slate-200 pl-14 pr-2">
               <span
-                className="absolute left-0 top-0 grid h-9 w-9 place-items-center rounded-full bg-[#214ED1]/8 text-[#214ED1]"
+                className="absolute left-2 top-0 grid h-9 w-9 place-items-center rounded-lg bg-[var(--electric)]/8 text-[var(--electric)]"
                 aria-hidden="true"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -153,7 +153,7 @@ export default function Home() {
             </article>
             <article className="relative border-l border-slate-200 pl-14 pr-2">
               <span
-                className="absolute left-0 top-0 grid h-9 w-9 place-items-center rounded-full bg-[#214ED1]/8 text-[#214ED1]"
+                className="absolute left-2 top-0 grid h-9 w-9 place-items-center rounded-lg bg-[var(--electric)]/8 text-[var(--electric)]"
                 aria-hidden="true"
               >
                 <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -171,21 +171,23 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="servicios" className="mx-auto w-full max-w-7xl px-6 pt-18 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#214ED1]">
-                Nuestros servicios
+        <section id="servicios" className="section-wrap mx-auto w-full max-w-7xl px-6 pt-18 lg:px-8">
+          <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--electric)]">
+                  Nuestros servicios
+                </p>
+            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
+              <div>
+                <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3.4rem)] leading-[0.95] text-[#0c1f4f]">
+                  Fisioterapia y fuerza con un mismo criterio clínico.
+                </h2>
+              </div>
+              <p className="max-w-4xl text-lg leading-relaxed text-slate-600">
+                Diseñamos un proceso continuo para que no tengas que separar tratamiento y progreso.
+                Valoramos tu caso, tratamos el dolor y planificamos el entrenamiento para recuperar
+                función y reducir recaídas.
               </p>
-              <h2 className="mt-3 font-display text-[clamp(2rem,4vw,3.4rem)] leading-[0.95] text-[#0c1f4f]">
-                Fisioterapia y fuerza con un mismo criterio clínico.
-              </h2>
             </div>
-            <p className="max-w-4xl text-lg leading-relaxed text-slate-600">
-              Diseñamos un proceso continuo para que no tengas que separar tratamiento y progreso.
-              Valoramos tu caso, tratamos el dolor y planificamos el entrenamiento para recuperar
-              función y reducir recaídas.
-            </p>
           </div>
 
           <div className="mt-12 grid gap-0 border-y border-slate-200">
@@ -215,7 +217,7 @@ export default function Home() {
                       <li key={bullet} className="flex items-start gap-2">
                         <span
                           aria-hidden="true"
-                          className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#214ED1]"
+                          className="mt-1.5 h-1.5 w-1.5 rounded-lg bg-[var(--electric)]"
                         />
                         <span>{bullet}</span>
                       </li>
@@ -231,14 +233,14 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="relative h-56 w-full overflow-hidden rounded-[1.25rem] border border-slate-200 bg-slate-100 sm:h-64">
+                <div className="relative h-56 w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-100 sm:h-64">
                   <Image
                     src={serviceImages[index % serviceImages.length]}
                     alt={service.title}
                     fill
                     className="object-cover transition duration-500 group-hover/program:scale-[1.03]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#001391]/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--electric)]/20 to-transparent" />
                 </div>
               </article>
             ))}
@@ -247,7 +249,7 @@ export default function Home() {
 
         <section id="metodologia" className="section-wrap">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#214ED1]">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--electric)]">
               Enfoque de trabajo
             </p>
             <h2 className="mt-3 max-w-3xl font-display text-[clamp(2rem,4vw,3.35rem)] leading-[0.95] text-[#0c1f4f]">
@@ -266,7 +268,7 @@ export default function Home() {
                 >
                   <div
                     className={`rounded-2xl px-5 py-5 shadow-[0_10px_24px_rgba(33,78,209,0.12)] ring-1 ring-inset ring-white/14 sm:px-6 sm:py-6 ${
-                      index % 2 === 0 ? "bg-[#214ED1]" : "bg-[#001391]"
+                      index % 2 === 0 ? "bg-[var(--electric)]" : "bg-[#0c3d72]"
                     }`}
                   >
                     <p className="font-display text-2xl leading-tight text-white">{row.title}</p>
@@ -282,7 +284,7 @@ export default function Home() {
 
         <section id="equipo" className="section-wrap">
           <div className="section-heading">
-            <p className="eyebrow">Equipo profesional</p>
+            <p className="eyebrow text-[var(--electric)]">Equipo profesional</p>
             <h2>Expertos en recuperación funcional, readaptación y fuerza terapéutica.</h2>
             <p className="mt-4 max-w-4xl text-slate-600">
               Trabajamos con personas que quieren dejar atrás el dolor, recuperar su actividad y
@@ -292,16 +294,16 @@ export default function Home() {
           <div className="mt-10 grid gap-8 md:grid-cols-2">
             {team.map((member) => (
               <article key={member.name} className="border-t border-slate-200 pt-6">
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col items-center gap-4">
                   <div className="avatar-ring" aria-hidden="true">
                     {member.name
                       .split(" ")
                       .map((chunk) => chunk[0])
                       .join("")}
                   </div>
-                  <div>
+                  <div className="text-center mt-4">
                     <h3 className="font-display text-2xl text-slate-900">{member.name}</h3>
-                    <p className="mt-1 text-sm font-semibold uppercase tracking-[0.12em] text-[#001391]">
+                    <p className="mt-1 text-sm font-semibold uppercase tracking-[0.12em] text-[#0371a8]">
                       {member.role}
                     </p>
                     <p className="mt-3 text-slate-600">{member.bio}</p>

@@ -16,11 +16,11 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 shadow-[0_10px_28px_rgba(5,18,35,0.045)] backdrop-blur-xl">
       <nav
-        className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 lg:px-10"
+        className="flex w-full items-center justify-between px-6 py-4 lg:px-10"
         aria-label="Principal"
       >
         <Link href="/" className="group inline-flex items-center gap-3">
-          <Logo className="logo-image" priority />
+          <Logo src="/logo.svg" alt="Logo Rehab Strength" className="logo-image" priority />
           <span className="font-display hidden md:inline-block text-[1.80rem] leading-none tracking-[0.01em] text-slate-900">
             Rehab Strength
           </span>
@@ -31,14 +31,14 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className={`nav-link ${pathname === item.href ? "text-[#214ED1]" : ""}`}
+              className={`nav-link ${pathname === item.href ? "text-[#0582c2]" : ""}`}
             >
               {item.label}
             </Link>
           ))}
         </div>
 
-        <Link href="/#reserva" className="btn-primary text-sm text-nowrap hidden min-h-12 md:inline-flex">
+        <Link href="/#reserva" className="btn-secondary text-sm text-nowrap hidden min-h-12 md:inline-flex">
           Solicita cita
         </Link>
       </nav>
